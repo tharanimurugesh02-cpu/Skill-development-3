@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+.app-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+header h1 {
+    color: #2e7d32;
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+header p {
+    color: #666;
+    margin-top: 0;
+}
+.dashboard {
+    display: flex;
+    gap: 20px;
+}
+.panel {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    flex: 1;
+}
+h3 {
+    margin-top: 0;
+    color: #2e7d32;
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 8px;
+}
+select, input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.addons label {
+    display: block;
+    margin-bottom: 12px;
+    cursor: pointer;
+    background: #f9fbf9;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+.btn-book {
+    width: 100%;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-book:hover {
+    background-color: #1b5e20;
+}
+.badge-goal {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.meal-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.meal-time {
+    font-weight: bold;
+    color: #555;
+    width: 90px;
+}
+.meal-name {
+    flex: 1;
+    color: #333;
+}
+.meal-cal {
+    color: #ff9800;
+    font-weight: bold;
+}
+.summary p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    color: #666;
+}
+.summary p span {
+    font-weight: bold;
+    color: #333;
+}
+.total-cost {
+    text-align: right;
+    color: #2e7d32;
+    margin-top: 15px;
+}

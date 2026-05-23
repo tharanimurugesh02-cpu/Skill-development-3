@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dietApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFeast - Lifestyle Meal Planner</title>
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- AngularJS Core Library CDN -->
+    <script src="C:\Users\THARANI\OneDrive\Documents\angular-1.8.2\angular.min.js"></script>
+</head>
+<body ng-controller="DietController">
+
+    <div class="app-container">
+        <!-- Header Section -->
+        <header>
+            <h1>🥗 FitFeast</h1>
+            <p>Customize your lifestyle diet plan, Macha!</p>
+        </header>
+
+        <!-- Main Workspace -->
+        <div class="dashboard">
+            
+            <!-- Left Side: Customization panel -->
+            <div class="panel input-panel">
+                <h3>1. Select Your Goal</h3>
+                <div class="goal-selection">
+                    <select ng-model="selectedGoal" ng-change="updateMeals()">
+                        <option value="Weight Loss">Weight Loss (Low Carb)</option>
+                        <option value="Muscle Gain">Muscle Gain (High Protein)</option>
+                        <option value="Keto Diet">Keto Diet (High Fat)</option>
+                    </select>
+                </div>
+
+                <h3>2. Customize Your Daily Pack</h3>
+                <div class="addons">
+                    <label>
+                        <input type="checkbox" ng-model="addons.proteinShake" ng-change="calculateTotal()"> 
+                        Premium Whey Protein Shake (+ ₹150)
+                    </label>
+                    <label>
+                        <input type="checkbox" ng-model="addons.chiaPudding" ng-change="calculateTotal()"> 
+                        Chia Seed Pudding Dessert (+ ₹80)
+                    </label>
+                </div>
+
+                <div class="user-info">
+                    <h3>3. Delivery Details</h3>
+                    <input type="text" ng-model="userName" placeholder="Your Name">
+                    <input type="text" ng-model="userAddress" placeholder="Delivery Address">
+                    <button class="btn-book" ng-click="placeOrder()">Subscribe Plan</button>
+                </div>
+            </div>
+
+            <!-- Right Side: Live Dashboard Preview -->
+            <div class="panel preview-panel">
+                <h3>Live Diet Plan Preview</h3>
+                <div class="badge-goal">{{ selectedGoal }} Pack</div>
+
+                <div class="meal-list">
+                    <div class="meal-item" ng-repeat="meal in currentMenu">
+                        <span class="meal-time">{{ meal.time }}:</span>
+                        <span class="meal-name">{{ meal.name }}</span>
+                        <span class="meal-cal">{{ meal.calories }} kcal</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Pricing Calculation Engine Display -->
+                <div class="summary">
+                    <p>Base Price: <span>₹{{ basePrice }} / day</span></p>
+                    <p>Add-ons Total: <span>₹{{ addonPrice }} / day</span></p>
+                    <h2 class="total-cost">Total: ₹{{ totalPrice }} <small>/ day</small></h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- AngularJS Script Engines Mapping -->
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>
